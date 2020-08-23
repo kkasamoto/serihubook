@@ -1,0 +1,1 @@
+web: gunicorn serihubook.wsgi --log-file -
