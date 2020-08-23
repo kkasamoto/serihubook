@@ -1,0 +1,10 @@
+# config environment
+.idea/
+venv/
+
+# python file
+local_settings.py
+*__pycache__*
+
+# config file
+db.sqlite3*
