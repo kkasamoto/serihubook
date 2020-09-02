@@ -13,6 +13,6 @@ class TestSerihu(TestCase):
         self.assertEqual(instance, actual)
 
     def test_work_valid_to_exceed_length(self):
-        instance = Serihu(serihu="a"*141, owner="kkk", created_by="admin")
+        instance = Serihu(serihu="a"*501, owner="kkk", created_by="admin")
         with self.assertRaises(ValidationError) as e:
             instance.full_clean()

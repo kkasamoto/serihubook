@@ -9,7 +9,7 @@ class Serihu(models.Model):
     Parameter
     ---------
     serihu: str
-        セリフ。140字以内。
+        セリフ。500字以内。
     owner: str
         セリフを発した人・キャラ。30字以内
     created_by: str
@@ -19,7 +19,7 @@ class Serihu(models.Model):
     updated_by: datetime
         このセリフが更新された日時
     """
-    serihu = models.CharField(max_length=140)
+    serihu = models.CharField(max_length=500)
     owner = models.CharField(max_length=30)
     created_by = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
