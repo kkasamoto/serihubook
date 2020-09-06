@@ -1,6 +1,11 @@
 from django.db import models
 
 
+class SerihuManager(models.Manager):
+    def random(self):
+        return Serihu.objects.order_by("?").first()
+
+
 class Serihu(models.Model):
     """ 様々な人・キャラが発した言葉やセリフを表すモデル
 
@@ -19,6 +24,8 @@ class Serihu(models.Model):
     updated_by: datetime
         このセリフが更新された日時
     """
+    objects = SerihuManager()
+
     serihu = models.CharField(max_length=500)
     owner = models.CharField(max_length=30)
     created_by = models.CharField(max_length=50)
@@ -27,3 +34,6 @@ class Serihu(models.Model):
 
     def __str__(self):
         return f'Serihu<id={self.id}, serihu={self.serihu[:5]}..., owner={self.owner}>'
+
+
+
