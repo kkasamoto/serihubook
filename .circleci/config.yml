@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.7.2
+        environment:
+          DATABASE_URL: "postgres://postgres@localhost:5432/build_db"
       - image: postgres:9.6
         environment:
           POSTGRES_USER: postgres
@@ -11,8 +13,6 @@ jobs:
       - checkout
       - run: pip3 install -r requirements.txt --user
       - run: python3 manage.py test
-          environment:
-            DATABASE_URL: "postgres://postgres@localhost:5432/build_db"
   deploy-prod:
     machine:
       image: circleci/classic:edge
