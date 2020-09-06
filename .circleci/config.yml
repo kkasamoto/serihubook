@@ -3,6 +3,13 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.7.2
+        environment:
+          DATABASE_URL: "postgres://postgres@localhost:5432/build_db"
+      - image: postgres:9.6
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: build_db
+          POSTGRES_HOST_AUTH_METHOD: trust
     steps:
       - checkout
       - run: pip3 install -r requirements.txt --user

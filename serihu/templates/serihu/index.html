@@ -1,0 +1,15 @@
+{% extends "serihu/base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'bootstrap4-custom/css/common.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="container">
+  <div class="serihu p-5 mx-auto col-lg-6 col-md-10">
+    <p class="lead-text">{{ serihu.serihu | linebreaksbr }}</p>
+    <p class="pt-3 lead">{{ serihu.owner }}</p>
+  </div>
+</main>
+{% endblock %}

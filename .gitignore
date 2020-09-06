@@ -8,3 +8,4 @@ local_settings.py
 
 # config file
 db.sqlite3*
+staticfiles
