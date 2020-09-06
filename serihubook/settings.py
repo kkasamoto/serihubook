@@ -82,6 +82,7 @@ WSGI_APPLICATION = 'serihubook.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+DATABASES = {}
 DATABASES['default'] = dj_database_url.config()
 
 
