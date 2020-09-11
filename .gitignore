@@ -3,7 +3,6 @@
 venv/
 
 # python file
-local_settings.py
 *__pycache__*
 
 # config file
