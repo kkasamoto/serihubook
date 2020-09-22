@@ -21,8 +21,3 @@ def index(request):
     serihu = Serihu.objects.random()
     context = {'serihu': serihu}
     return render(request, 'serihu/index.html', context=context)
-
-
-if __name__ == '__main__':
-    import time
-    print(time.timezone)
